@@ -218,7 +218,7 @@ Apple HIG, Apple 공식 macOS 27 Design Resources 및 사용자가 제공한 Ske
 
 ### 데이터와 원천
 
-원본 Notion 주소와 계정 식별자는 공개본에서 제거했다. `clinic_ai/source_schema.json`은 7개 DB 구조, `clinic_ai/source_docs.json`은 화면 열람과 AI에 사용하는 9개 참조 문서다. 2026-09-17 확보한 스냅샷이며 자동 동기화하지 않는다.
+공개 Notion 원본은 [clinic-ai](https://rapl.notion.site/clinic-ai)다. 사용자가 이 주소의 공개를 승인했다. 비공개 페이지·DB 식별자와 계정 식별자는 공개본에서 제거한 상태를 유지한다. `clinic_ai/source_schema.json`은 7개 DB 구조, `clinic_ai/source_docs.json`은 화면 열람과 AI에 사용하는 9개 참조 문서다. 2026-09-17 확보한 스냅샷이며 자동 동기화하지 않는다.
 
 | 기존 테이블 | 역할 |
 | --- | --- |
