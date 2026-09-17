@@ -1,0 +1,4 @@
+// Copy Signing.local.xcconfig.example to Signing.local.xcconfig and configure your identity.
+CODE_SIGN_IDENTITY = Apple Development
+DEVELOPMENT_TEAM =
+#include? "Signing.local.xcconfig"

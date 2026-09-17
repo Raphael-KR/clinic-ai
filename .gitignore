@@ -1,0 +1,45 @@
+# Local records, build products, and caches
+/data/
+/.build/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local credentials and database copies
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+
+# Local audio and dependency directories
+*.wav
+*.m4a
+*.mp3
+*.aiff
+*.aif
+*.caf
+node_modules/
+
+# Xcode per-user UI and local package state
+xcuserdata/
+macos/.swiftpm/
+macos/.build/
+
+# Private signing configuration, credentials, and local exports
+macos/Signing.local.xcconfig
+*.p12
+*.pfx
+*.pem
+*.key
+*.mobileprovision
+*.provisionprofile
+*.keychain*
+*.bundle
+*.mov
+*.mp4
+*.zip
+*.tar

@@ -1,0 +1,4 @@
+// Find your own identity with: security find-identity -v -p codesigning
+// Use the same identity for CLI and Xcode builds to preserve macOS permissions.
+CODE_SIGN_IDENTITY = YOUR_CERTIFICATE_SHA1
+DEVELOPMENT_TEAM = YOUR_TEAM_ID

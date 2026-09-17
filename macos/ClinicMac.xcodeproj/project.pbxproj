@@ -1,0 +1,43 @@
+// !$*UTF8*$!
+{archiveVersion = 1; classes = {}; objectVersion = 56; objects = {
+AAA100000000000000000006 = { isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
+AAA100000000000000000001 = { isa = PBXFileReference; lastKnownFileType = image.icns; path = Resources/AppIcon.icns; sourceTree = "<group>"; };
+AAA100000000000000000002 = { isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Resources/Localizable.xcstrings; sourceTree = "<group>"; };
+AAA100000000000000000003 = { isa = PBXBuildFile; fileRef = AAA100000000000000000001; };
+AAA100000000000000000004 = { isa = PBXBuildFile; fileRef = AAA100000000000000000002; };
+AAA100000000000000000005 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (AAA100000000000000000003,AAA100000000000000000004,); runOnlyForDeploymentPostprocessing = 0; };
+
+F810A3947224DC074E90BB0D = { isa = PBXGroup; children = (345174736421CAA51FD7D07E,DAD84B9B45E3FFF897DE9A95,C1E9068BA6CB48814DF4D16D,CD61ED751841705D391FF246,EFB428F33F583961AD233C71,3585D4B53D2AC4F06078ACF3,B2471AB3C4EB6FCB3463717E,0BE218F9852553D9D88C387A,53155159A1E4AD3B01A7704C,); name = Sources; path = "Sources/ClinicMac"; sourceTree = "<group>"; };
+345174736421CAA51FD7D07E = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClinicAPI.swift"; sourceTree = "<group>"; };
+59D022D032C90E4A2436B26A = { isa = PBXBuildFile; fileRef = 345174736421CAA51FD7D07E; };
+DAD84B9B45E3FFF897DE9A95 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClinicApp.swift"; sourceTree = "<group>"; };
+9A4E18E01473D8FA91160257 = { isa = PBXBuildFile; fileRef = DAD84B9B45E3FFF897DE9A95; };
+C1E9068BA6CB48814DF4D16D = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClinicModel.swift"; sourceTree = "<group>"; };
+FA40290AFF571AB2F1EF5DAF = { isa = PBXBuildFile; fileRef = C1E9068BA6CB48814DF4D16D; };
+CD61ED751841705D391FF246 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor.swift"; sourceTree = "<group>"; };
+63CDAAE2D22AFE4EC4954226 = { isa = PBXBuildFile; fileRef = CD61ED751841705D391FF246; };
+EFB428F33F583961AD233C71 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microphone.swift"; sourceTree = "<group>"; };
+5C0C5AF9B7E2FED3C8CA94BD = { isa = PBXBuildFile; fileRef = EFB428F33F583961AD233C71; };
+3585D4B53D2AC4F06078ACF3 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models.swift"; sourceTree = "<group>"; };
+BE6E2EB4F21E6E6AB644DF35 = { isa = PBXBuildFile; fileRef = 3585D4B53D2AC4F06078ACF3; };
+B2471AB3C4EB6FCB3463717E = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView.swift"; sourceTree = "<group>"; };
+43643B8D7BA31317C201FAFC = { isa = PBXBuildFile; fileRef = B2471AB3C4EB6FCB3463717E; };
+0BE218F9852553D9D88C387A = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sheets.swift"; sourceTree = "<group>"; };
+1BFB7CC956B7E08D5688157B = { isa = PBXBuildFile; fileRef = 0BE218F9852553D9D88C387A; };
+53155159A1E4AD3B01A7704C = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkspaceViews.swift"; sourceTree = "<group>"; };
+CCF7F1EAEF63D8E043D3F252 = { isa = PBXBuildFile; fileRef = 53155159A1E4AD3B01A7704C; };
+A8792157CB4F27FB949C035F = { isa = PBXFileReference; explicitFileType = wrapper.application; path = "한의원AI로컬구축.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+0A3E27B8CA818264D75C8D81 = { isa = PBXGroup; children = (A8792157CB4F27FB949C035F,); name = Products; sourceTree = "<group>"; };
+0D6E4079E36703EBD37C0072 = { isa = PBXGroup; children = (AAA100000000000000000006,AAA100000000000000000001,AAA100000000000000000002,F810A3947224DC074E90BB0D,0A3E27B8CA818264D75C8D81,); sourceTree = "<group>"; };
+878A52FC5FF6A57D50B7B870 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (59D022D032C90E4A2436B26A,9A4E18E01473D8FA91160257,FA40290AFF571AB2F1EF5DAF,63CDAAE2D22AFE4EC4954226,5C0C5AF9B7E2FED3C8CA94BD,BE6E2EB4F21E6E6AB644DF35,43643B8D7BA31317C201FAFC,1BFB7CC956B7E08D5688157B,CCF7F1EAEF63D8E043D3F252,); runOnlyForDeploymentPostprocessing = 0; };
+E2AA269EB967A8853A258BFA = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+D92C6A81B2FF50096BCDA808 = { isa = PBXShellScriptBuildPhase; buildActionMask = 2147483647; files = (); inputPaths = ("$(SRCROOT)/../scripts/native_runtime.py",); outputPaths = ("$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/Runtime.json",); runOnlyForDeploymentPostprocessing = 0; shellPath = /bin/sh; shellScript = "set -eu\nexport CLINIC_BUILD_ROOT=\"$SRCROOT/..\"\nexport CLINIC_NATIVE_PORT=\"${CLINIC_NATIVE_PORT:-8768}\"\nexport CLINIC_NATIVE_DB=\"${CLINIC_NATIVE_DB:-$SRCROOT/../.build/native-qa/clinic.sqlite3}\"\nexport CLINIC_RUNTIME_OUT=\"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/Runtime.json\"\n/usr/bin/python3 \"$SRCROOT/../scripts/native_runtime.py\"\n"; name = "Local runtime configuration"; };
+73EBF6644258C120893E685D = { isa = XCBuildConfiguration; name = Debug; buildSettings = {MACOSX_DEPLOYMENT_TARGET = "27.0"; SDKROOT = "macosx"; ALWAYS_SEARCH_USER_PATHS = NO; SWIFT_VERSION = "6.0"; ARCHS = "arm64"; ENABLE_USER_SCRIPT_SANDBOXING = "NO"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG";}; };
+0B0C687DF8B6B8DC790B519C = { isa = XCBuildConfiguration; name = Release; buildSettings = {MACOSX_DEPLOYMENT_TARGET = "27.0"; SDKROOT = "macosx"; ALWAYS_SEARCH_USER_PATHS = NO; SWIFT_VERSION = "6.0"; ARCHS = "arm64"; ENABLE_USER_SCRIPT_SANDBOXING = "NO"; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";}; };
+76F8DEC3DFE0BDB465198890 = { isa = XCConfigurationList; buildConfigurations = (73EBF6644258C120893E685D,0B0C687DF8B6B8DC790B519C,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+6C7EFF6369083C8E1F2B1994 = { isa = XCBuildConfiguration; name = Debug; baseConfigurationReference = AAA100000000000000000006; buildSettings = {PRODUCT_NAME = "한의원AI로컬구축"; EXECUTABLE_NAME = "ClinicMac"; PRODUCT_MODULE_NAME = ClinicMac; PRODUCT_BUNDLE_IDENTIFIER = "com.raphael.ClinicAI"; INFOPLIST_FILE = "Resources/Info.plist"; CODE_SIGN_ENTITLEMENTS = "Resources/Clinic.entitlements"; CODE_SIGN_STYLE = "Manual"; ENABLE_HARDENED_RUNTIME = "YES"; ENABLE_APP_SANDBOX = "NO"; GENERATE_INFOPLIST_FILE = "NO"; CLINIC_NATIVE_PORT = "8768"; CLINIC_NATIVE_DB = "$(SRCROOT)/../.build/native-qa/clinic.sqlite3"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG";}; };
+DD75E2CB1C510A828AC72D96 = { isa = XCBuildConfiguration; name = Release; baseConfigurationReference = AAA100000000000000000006; buildSettings = {PRODUCT_NAME = "한의원AI로컬구축"; EXECUTABLE_NAME = "ClinicMac"; PRODUCT_MODULE_NAME = ClinicMac; PRODUCT_BUNDLE_IDENTIFIER = "com.raphael.ClinicAI"; INFOPLIST_FILE = "Resources/Info.plist"; CODE_SIGN_ENTITLEMENTS = "Resources/Clinic.entitlements"; CODE_SIGN_STYLE = "Manual"; ENABLE_HARDENED_RUNTIME = "YES"; ENABLE_APP_SANDBOX = "NO"; GENERATE_INFOPLIST_FILE = "NO"; CLINIC_NATIVE_PORT = "8768"; CLINIC_NATIVE_DB = "$(SRCROOT)/../.build/native-qa/clinic.sqlite3"; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";}; };
+1B672BF3DA427763BF644BE3 = { isa = XCConfigurationList; buildConfigurations = (6C7EFF6369083C8E1F2B1994,DD75E2CB1C510A828AC72D96,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+34A04005BCAF206EEC990BD9 = { isa = PBXNativeTarget; buildConfigurationList = 1B672BF3DA427763BF644BE3; buildPhases = (AAA100000000000000000005,878A52FC5FF6A57D50B7B870,E2AA269EB967A8853A258BFA,D92C6A81B2FF50096BCDA808,); buildRules = (); dependencies = (); name = ClinicMac; productName = "한의원AI로컬구축"; productReference = A8792157CB4F27FB949C035F; productType = "com.apple.product-type.application"; };
+244210E48437B6556980A702 = { isa = PBXProject; attributes = { LastUpgradeCheck = 2700; }; buildConfigurationList = 76F8DEC3DFE0BDB465198890; compatibilityVersion = "Xcode 14.0"; developmentRegion = ko; hasScannedForEncodings = 0; knownRegions = (ko,en,Base,); mainGroup = 0D6E4079E36703EBD37C0072; productRefGroup = 0A3E27B8CA818264D75C8D81; projectDirPath = ""; projectRoot = ""; targets = (34A04005BCAF206EEC990BD9,); };
+}; rootObject = 244210E48437B6556980A702;}

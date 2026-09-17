@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleIdentifier</key><string>com.raphael.ClinicAI</string>
+<key>CFBundleName</key><string>한의원AI로컬구축</string>
+<key>CFBundleDisplayName</key><string>한의원AI로컬구축</string>
+<key>CFBundleExecutable</key><string>ClinicMac</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>0.2.0</string>
+<key>CFBundleIconFile</key><string>AppIcon</string>
+<key>CFBundleVersion</key><string>2</string>
+<key>LSMinimumSystemVersion</key><string>27.0</string>
+<key>CFBundleDevelopmentRegion</key><string>ko</string>
+<key>NSPrincipalClass</key><string>NSApplication</string>
+<key>NSMicrophoneUsageDescription</key><string>진료 대화를 이 Mac에서 실시간으로 전사합니다. 마이크 음성을 파일로 저장하지 않습니다.</string>
+<key>NSSpeechRecognitionUsageDescription</key><string>Apple 음성 인식으로 한국어 진료 대화를 이 Mac에서 전사합니다.</string>
+<key>NSAppTransportSecurity</key><dict><key>NSAllowsLocalNetworking</key><true/></dict>
+</dict></plist>

@@ -1,0 +1,1061 @@
+{
+  "templates": {
+    "icon": "💬",
+    "name": "CRM 템플릿 DB",
+    "schema": {
+      "관련 CRM 발송": {
+        "dataSourceUrl": "collection://local-crm",
+        "description": "이 템플릿을 사용하는 발송 요청",
+        "name": "관련 CRM 발송",
+        "type": "relation"
+      },
+      "내부 메모": {
+        "description": "",
+        "name": "내부 메모",
+        "type": "text"
+      },
+      "메시지 본문": {
+        "description": "",
+        "name": "메시지 본문",
+        "type": "text"
+      },
+      "변수 목록": {
+        "description": "",
+        "name": "변수 목록",
+        "type": "text"
+      },
+      "사용 목적": {
+        "description": "",
+        "name": "사용 목적",
+        "type": "text"
+      },
+      "사용 상태": {
+        "description": "",
+        "name": "사용 상태",
+        "options": [
+          {
+            "color": "green",
+            "description": "",
+            "name": "사용중"
+          },
+          {
+            "color": "yellow",
+            "description": "",
+            "name": "검토필요"
+          },
+          {
+            "color": "gray",
+            "description": "",
+            "name": "보류"
+          },
+          {
+            "color": "red",
+            "description": "",
+            "name": "폐기"
+          }
+        ],
+        "type": "select"
+      },
+      "템플릿 유형": {
+        "description": "",
+        "name": "템플릿 유형",
+        "options": [
+          {
+            "color": "blue",
+            "description": "",
+            "name": "진료 안내"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "한약 안내"
+          },
+          {
+            "color": "purple",
+            "description": "",
+            "name": "예약 안내"
+          },
+          {
+            "color": "gray",
+            "description": "",
+            "name": "기타"
+          }
+        ],
+        "type": "select"
+      },
+      "템플릿명": {
+        "description": "",
+        "name": "템플릿명",
+        "type": "title"
+      },
+      "환자용 여부": {
+        "description": "",
+        "name": "환자용 여부",
+        "type": "checkbox"
+      }
+    },
+    "url": "collection://local-templates",
+    "views": [
+      {
+        "dataSourceUrl": "{{collection://local-templates}}",
+        "displayProperties": [
+          "템플릿명",
+          "템플릿 유형",
+          "사용 목적",
+          "환자용 여부",
+          "사용 상태",
+          "관련 CRM 발송",
+          "내부 메모",
+          "메시지 본문",
+          "변수 목록"
+        ],
+        "name": "전체 테이블",
+        "type": "table"
+      }
+    ]
+  },
+  "crm": {
+    "icon": "💬",
+    "name": "CRM 발송 DB",
+    "schema": {
+      "내부 메모": {
+        "description": "",
+        "name": "내부 메모",
+        "type": "text"
+      },
+      "담당자": {
+        "description": "",
+        "limit": 1,
+        "name": "담당자",
+        "type": "person"
+      },
+      "메시지 본문": {
+        "description": "",
+        "name": "메시지 본문",
+        "type": "text"
+      },
+      "메시지 템플릿": {
+        "dataSourceUrl": "collection://local-templates",
+        "description": "발송 메시지에 사용하는 템플릿",
+        "limit": 1,
+        "name": "메시지 템플릿",
+        "type": "relation"
+      },
+      "발송 목적": {
+        "description": "",
+        "name": "발송 목적",
+        "options": [
+          {
+            "color": "blue",
+            "description": "",
+            "name": "진료 안내"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "한약 안내"
+          },
+          {
+            "color": "purple",
+            "description": "",
+            "name": "예약 안내"
+          },
+          {
+            "color": "gray",
+            "description": "",
+            "name": "기타"
+          }
+        ],
+        "type": "select"
+      },
+      "발송 상태": {
+        "description": "",
+        "name": "발송 상태",
+        "options": [
+          {
+            "color": "yellow",
+            "description": "",
+            "name": "발송대기"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "발송완료"
+          },
+          {
+            "color": "gray",
+            "description": "",
+            "name": "보류"
+          },
+          {
+            "color": "red",
+            "description": "",
+            "name": "취소"
+          }
+        ],
+        "type": "select"
+      },
+      "발송 예정일": {
+        "description": "",
+        "name": "발송 예정일",
+        "querySqlColumns": {
+          "columns": [
+            {
+              "name": "date:발송 예정일:start",
+              "sqlType": "TEXT"
+            },
+            {
+              "name": "date:발송 예정일:end",
+              "sqlType": "TEXT"
+            },
+            {
+              "name": "date:발송 예정일:is_datetime",
+              "sqlType": "INTEGER"
+            }
+          ],
+          "usage": "For connections.notion.querySql. Main schema name not queryable."
+        },
+        "type": "date"
+      },
+      "수신자 이름": {
+        "description": "",
+        "name": "수신자 이름",
+        "type": "text"
+      },
+      "승인 상태": {
+        "description": "",
+        "name": "승인 상태",
+        "options": [
+          {
+            "color": "gray",
+            "description": "",
+            "name": "작성중"
+          },
+          {
+            "color": "yellow",
+            "description": "",
+            "name": "승인대기"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "승인완료"
+          },
+          {
+            "color": "red",
+            "description": "",
+            "name": "반려"
+          }
+        ],
+        "type": "select"
+      },
+      "실제 발송일": {
+        "description": "",
+        "name": "실제 발송일",
+        "querySqlColumns": {
+          "columns": [
+            {
+              "name": "date:실제 발송일:start",
+              "sqlType": "TEXT"
+            },
+            {
+              "name": "date:실제 발송일:end",
+              "sqlType": "TEXT"
+            },
+            {
+              "name": "date:실제 발송일:is_datetime",
+              "sqlType": "INTEGER"
+            }
+          ],
+          "usage": "For connections.notion.querySql. Main schema name not queryable."
+        },
+        "type": "date"
+      },
+      "연결된 진료 세션": {
+        "dataSourceUrl": "collection://local-sessions",
+        "description": "발송 요청의 진료 세션",
+        "limit": 1,
+        "name": "연결된 진료 세션",
+        "type": "relation"
+      },
+      "요청명": {
+        "description": "",
+        "name": "요청명",
+        "type": "title"
+      },
+      "휴대전화번호": {
+        "description": "",
+        "name": "휴대전화번호",
+        "type": "phone_number"
+      }
+    },
+    "url": "collection://local-crm",
+    "views": [
+      {
+        "dataSourceUrl": "{{collection://local-crm}}",
+        "displayProperties": [
+          "요청명",
+          "수신자 이름",
+          "발송 목적",
+          "승인 상태",
+          "발송 상태",
+          "발송 예정일",
+          "담당자",
+          "내부 메모",
+          "메시지 본문",
+          "메시지 템플릿",
+          "실제 발송일",
+          "연결된 진료 세션",
+          "휴대전화번호"
+        ],
+        "name": "전체 테이블",
+        "type": "table"
+      }
+    ]
+  },
+  "exams": {
+    "icon": "🩺",
+    "name": "신체검사 DB",
+    "schema": {
+      "APG": {
+        "description": "",
+        "name": "APG",
+        "type": "text"
+      },
+      "HRV": {
+        "description": "",
+        "name": "HRV",
+        "type": "text"
+      },
+      "검사 기록명": {
+        "description": "운영자 자동화로 생성하는 내부 식별값",
+        "name": "검사 기록명",
+        "type": "title"
+      },
+      "검사 메모": {
+        "description": "",
+        "name": "검사 메모",
+        "type": "text"
+      },
+      "맥박": {
+        "description": "",
+        "name": "맥박",
+        "type": "number"
+      },
+      "수축기혈압": {
+        "description": "",
+        "name": "수축기혈압",
+        "type": "number"
+      },
+      "연결된 진료 세션": {
+        "dataSourceUrl": "collection://local-sessions",
+        "description": "직원이 Form에서 직접 선택하는 진료 세션",
+        "limit": 1,
+        "name": "연결된 진료 세션",
+        "type": "relation"
+      },
+      "이완기혈압": {
+        "description": "",
+        "name": "이완기혈압",
+        "type": "number"
+      },
+      "인바디": {
+        "description": "",
+        "name": "인바디",
+        "type": "text"
+      },
+      "체온": {
+        "description": "",
+        "name": "체온",
+        "number_precision": "precision_1",
+        "type": "number"
+      }
+    },
+    "url": "collection://local-exams",
+    "views": [
+      {
+        "dataSourceUrl": "{{collection://local-exams}}",
+        "displayProperties": [
+          "검사 기록명",
+          "수축기혈압",
+          "이완기혈압",
+          "맥박",
+          "체온",
+          "검사 메모",
+          "APG",
+          "HRV",
+          "연결된 진료 세션",
+          "인바디"
+        ],
+        "name": "전체 테이블",
+        "type": "table"
+      },
+      {
+        "dataSourceUrl": "{{collection://local-exams}}",
+        "description": "직원·한의사용 내부 검사 입력 Form입니다.",
+        "icon": "🩺",
+        "name": "신체검사 Form",
+        "questions": [
+          {
+            "description": "해당 환자의 진료 세션을 직접 선택하세요.",
+            "name": "연결된 진료 세션",
+            "property": "연결된 진료 세션",
+            "required": true
+          },
+          {
+            "name": "수축기혈압",
+            "property": "수축기혈압",
+            "required": false
+          },
+          {
+            "name": "이완기혈압",
+            "property": "이완기혈압",
+            "required": false
+          },
+          {
+            "name": "맥박",
+            "property": "맥박",
+            "required": false
+          },
+          {
+            "name": "체온",
+            "property": "체온",
+            "required": false
+          },
+          {
+            "name": "HRV",
+            "property": "HRV",
+            "required": false
+          },
+          {
+            "name": "APG",
+            "property": "APG",
+            "required": false
+          },
+          {
+            "name": "인바디",
+            "property": "인바디",
+            "required": false
+          },
+          {
+            "name": "검사 메모",
+            "property": "검사 메모",
+            "required": false
+          }
+        ],
+        "title": "신체검사",
+        "type": "form_editor"
+      }
+    ]
+  },
+  "surveys": {
+    "icon": "📝",
+    "name": "초진설문 DB",
+    "notAvailableInQuerySql": [
+      "성별",
+      "나이"
+    ],
+    "schema": {
+      "개인정보 수집 동의": {
+        "description": "",
+        "name": "개인정보 수집 동의",
+        "type": "checkbox"
+      },
+      "나이": {
+        "description": "",
+        "name": "나이",
+        "type": "formula"
+      },
+      "내부 메모": {
+        "description": "",
+        "name": "내부 메모",
+        "type": "text"
+      },
+      "발병 시점 또는 경과": {
+        "description": "",
+        "name": "발병 시점 또는 경과",
+        "type": "text"
+      },
+      "복용약": {
+        "description": "현재 복용 중인 약",
+        "name": "복용약",
+        "type": "text"
+      },
+      "설문 상태": {
+        "description": "",
+        "name": "설문 상태",
+        "options": [
+          {
+            "color": "gray",
+            "description": "",
+            "name": "접수대기"
+          },
+          {
+            "color": "blue",
+            "description": "",
+            "name": "제출완료"
+          },
+          {
+            "color": "yellow",
+            "description": "",
+            "name": "검토필요"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "세션연결완료"
+          },
+          {
+            "color": "red",
+            "description": "",
+            "name": "보류"
+          }
+        ],
+        "type": "select"
+      },
+      "성별": {
+        "description": "",
+        "name": "성별",
+        "type": "formula"
+      },
+      "연결된 진료 세션": {
+        "dataSourceUrl": "collection://local-sessions",
+        "description": "이 설문과 연결된 진료 세션",
+        "limit": 1,
+        "name": "연결된 진료 세션",
+        "type": "relation"
+      },
+      "이름": {
+        "description": "환자 이름",
+        "name": "이름",
+        "type": "title"
+      },
+      "제출일": {
+        "description": "",
+        "name": "제출일",
+        "type": "created_time"
+      },
+      "주민등록번호 뒤 7자리": {
+        "description": "",
+        "name": "주민등록번호 뒤 7자리",
+        "type": "text"
+      },
+      "주민등록번호 앞 6자리": {
+        "description": "",
+        "name": "주민등록번호 앞 6자리",
+        "type": "text"
+      },
+      "주소증": {
+        "description": "",
+        "name": "주소증",
+        "type": "text"
+      },
+      "증상 상세": {
+        "description": "",
+        "name": "증상 상세",
+        "type": "text"
+      },
+      "카카오 안내 동의": {
+        "description": "",
+        "name": "카카오 안내 동의",
+        "type": "checkbox"
+      },
+      "휴대폰 번호": {
+        "description": "",
+        "name": "휴대폰 번호",
+        "type": "phone_number"
+      }
+    },
+    "url": "collection://local-surveys",
+    "views": [
+      {
+        "dataSourceUrl": "{{collection://local-surveys}}",
+        "displayProperties": [
+          "이름",
+          "휴대폰 번호",
+          "주소증",
+          "설문 상태",
+          "제출일",
+          "개인정보 수집 동의",
+          "나이",
+          "내부 메모",
+          "발병 시점 또는 경과",
+          "성별",
+          "연결된 진료 세션",
+          "주민등록번호 뒤 7자리",
+          "주민등록번호 앞 6자리",
+          "증상 상세",
+          "카카오 안내 동의",
+          "복용약"
+        ],
+        "name": "전체 테이블",
+        "type": "table"
+      },
+      {
+        "dataSourceUrl": "{{collection://local-surveys}}",
+        "description": "진료 준비를 위한 초진 정보를 입력해 주세요.",
+        "icon": "📝",
+        "name": "초진설문 Form",
+        "questions": [
+          {
+            "name": "이름",
+            "property": "이름",
+            "required": true
+          },
+          {
+            "name": "휴대폰 번호",
+            "property": "휴대폰 번호",
+            "required": true
+          },
+          {
+            "name": "주민등록번호 앞 6자리",
+            "property": "주민등록번호 앞 6자리",
+            "required": true
+          },
+          {
+            "name": "주민등록번호 뒤 7자리",
+            "property": "주민등록번호 뒤 7자리",
+            "required": true
+          },
+          {
+            "name": "주소증",
+            "property": "주소증",
+            "required": true
+          },
+          {
+            "name": "발병 시점 또는 경과",
+            "property": "발병 시점 또는 경과",
+            "required": false
+          },
+          {
+            "name": "증상 상세",
+            "property": "증상 상세",
+            "required": true
+          },
+          {
+            "name": "복용약",
+            "property": "복용약",
+            "required": true
+          },
+          {
+            "name": "개인정보 수집 동의",
+            "property": "개인정보 수집 동의",
+            "required": true
+          },
+          {
+            "name": "카카오 안내 동의",
+            "property": "카카오 안내 동의",
+            "required": false
+          }
+        ],
+        "title": "초진설문",
+        "type": "form_editor"
+      }
+    ]
+  },
+  "sessions": {
+    "icon": "🩺",
+    "name": "진료 세션 DB",
+    "schema": {
+      "EMR 복사 여부": {
+        "description": "",
+        "name": "EMR 복사 여부",
+        "type": "checkbox"
+      },
+      "관련 CRM 발송": {
+        "dataSourceUrl": "collection://local-crm",
+        "description": "이 세션과 관련된 CRM 발송 요청",
+        "name": "관련 CRM 발송",
+        "type": "relation"
+      },
+      "관련 신체검사": {
+        "dataSourceUrl": "collection://local-exams",
+        "description": "이 세션에 연결된 신체검사 기록",
+        "name": "관련 신체검사",
+        "type": "relation"
+      },
+      "관련 한의학 자료": {
+        "dataSourceUrl": "collection://local-knowledge",
+        "description": "SOAP·CDSS 작성에 참고하는 자료",
+        "name": "관련 한의학 자료",
+        "type": "relation"
+      },
+      "내부 메모": {
+        "description": "",
+        "name": "내부 메모",
+        "type": "text"
+      },
+      "담당자": {
+        "description": "",
+        "limit": 1,
+        "name": "담당자",
+        "type": "person"
+      },
+      "세션 상태": {
+        "description": "",
+        "name": "세션 상태",
+        "options": [
+          {
+            "color": "gray",
+            "description": "",
+            "name": "접수"
+          },
+          {
+            "color": "blue",
+            "description": "",
+            "name": "설문확인"
+          },
+          {
+            "color": "blue",
+            "description": "",
+            "name": "검사확인"
+          },
+          {
+            "color": "yellow",
+            "description": "",
+            "name": "문진중"
+          },
+          {
+            "color": "purple",
+            "description": "",
+            "name": "AI문서작성"
+          },
+          {
+            "color": "orange",
+            "description": "",
+            "name": "한의사검토"
+          },
+          {
+            "color": "pink",
+            "description": "",
+            "name": "안내준비"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "완료"
+          },
+          {
+            "color": "red",
+            "description": "",
+            "name": "보류"
+          }
+        ],
+        "type": "select"
+      },
+      "세션명": {
+        "description": "",
+        "name": "세션명",
+        "type": "title"
+      },
+      "연결된 초진설문": {
+        "dataSourceUrl": "collection://local-surveys",
+        "description": "이 세션을 생성한 초진설문",
+        "limit": 1,
+        "name": "연결된 초진설문",
+        "type": "relation"
+      },
+      "원자료 삭제 필요 여부": {
+        "description": "",
+        "name": "원자료 삭제 필요 여부",
+        "type": "checkbox"
+      }
+    },
+    "url": "collection://local-sessions",
+    "views": [
+      {
+        "dataSourceUrl": "{{collection://local-sessions}}",
+        "displayProperties": [
+          "세션명",
+          "세션 상태",
+          "담당자",
+          "EMR 복사 여부",
+          "원자료 삭제 필요 여부",
+          "관련 CRM 발송",
+          "관련 신체검사",
+          "관련 한의학 자료",
+          "내부 메모",
+          "연결된 초진설문"
+        ],
+        "name": "전체 테이블",
+        "type": "table"
+      }
+    ]
+  },
+  "settings": {
+    "icon": "⚙️",
+    "name": "설정·운영 체크 DB",
+    "schema": {
+      "값": {
+        "description": "",
+        "name": "값",
+        "type": "text"
+      },
+      "내부 메모": {
+        "description": "",
+        "name": "내부 메모",
+        "type": "text"
+      },
+      "담당자": {
+        "description": "",
+        "limit": 1,
+        "name": "담당자",
+        "type": "person"
+      },
+      "상태": {
+        "description": "",
+        "name": "상태",
+        "options": [
+          {
+            "color": "gray",
+            "description": "",
+            "name": "대기"
+          },
+          {
+            "color": "yellow",
+            "description": "",
+            "name": "확인필요"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "완료"
+          },
+          {
+            "color": "red",
+            "description": "",
+            "name": "보류"
+          }
+        ],
+        "type": "select"
+      },
+      "신체검사 Form URL": {
+        "description": "",
+        "name": "신체검사 Form URL",
+        "type": "url"
+      },
+      "초진설문 Form URL": {
+        "description": "",
+        "name": "초진설문 Form URL",
+        "type": "url"
+      },
+      "항목 유형": {
+        "description": "",
+        "name": "항목 유형",
+        "options": [
+          {
+            "color": "blue",
+            "description": "",
+            "name": "Form URL"
+          },
+          {
+            "color": "purple",
+            "description": "",
+            "name": "자동화"
+          },
+          {
+            "color": "orange",
+            "description": "",
+            "name": "권한"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "기능 점검"
+          },
+          {
+            "color": "gray",
+            "description": "",
+            "name": "기타"
+          }
+        ],
+        "type": "select"
+      },
+      "항목명": {
+        "description": "",
+        "name": "항목명",
+        "type": "title"
+      },
+      "확인일": {
+        "description": "",
+        "name": "확인일",
+        "querySqlColumns": {
+          "columns": [
+            {
+              "name": "date:확인일:start",
+              "sqlType": "TEXT"
+            },
+            {
+              "name": "date:확인일:end",
+              "sqlType": "TEXT"
+            },
+            {
+              "name": "date:확인일:is_datetime",
+              "sqlType": "INTEGER"
+            }
+          ],
+          "usage": "For connections.notion.querySql. Main schema name not queryable."
+        },
+        "type": "date"
+      }
+    },
+    "url": "collection://local-settings",
+    "views": [
+      {
+        "dataSourceUrl": "{{collection://local-settings}}",
+        "displayProperties": [
+          "항목명",
+          "항목 유형",
+          "상태",
+          "담당자",
+          "확인일",
+          "값",
+          "내부 메모",
+          "신체검사 Form URL",
+          "초진설문 Form URL"
+        ],
+        "name": "전체 테이블",
+        "type": "table"
+      }
+    ]
+  },
+  "knowledge": {
+    "icon": "📚",
+    "name": "한의학 자료 DB",
+    "schema": {
+      "관련 변증": {
+        "description": "",
+        "name": "관련 변증",
+        "type": "text"
+      },
+      "관련 증상": {
+        "description": "",
+        "name": "관련 증상",
+        "options": [],
+        "type": "multi_select"
+      },
+      "관련 진료 세션": {
+        "dataSourceUrl": "collection://local-sessions",
+        "description": "이 자료를 참고한 진료 세션",
+        "name": "관련 진료 세션",
+        "type": "relation"
+      },
+      "관련 처방": {
+        "description": "",
+        "name": "관련 처방",
+        "type": "text"
+      },
+      "내부 메모": {
+        "description": "",
+        "name": "내부 메모",
+        "type": "text"
+      },
+      "사용 상태": {
+        "description": "",
+        "name": "사용 상태",
+        "options": [
+          {
+            "color": "green",
+            "description": "",
+            "name": "사용중"
+          },
+          {
+            "color": "yellow",
+            "description": "",
+            "name": "검토필요"
+          },
+          {
+            "color": "gray",
+            "description": "",
+            "name": "보류"
+          },
+          {
+            "color": "red",
+            "description": "",
+            "name": "폐기"
+          }
+        ],
+        "type": "select"
+      },
+      "상세 내용": {
+        "description": "",
+        "name": "상세 내용",
+        "type": "text"
+      },
+      "자료 유형": {
+        "description": "",
+        "name": "자료 유형",
+        "options": [
+          {
+            "color": "blue",
+            "description": "",
+            "name": "증상"
+          },
+          {
+            "color": "purple",
+            "description": "",
+            "name": "변증"
+          },
+          {
+            "color": "green",
+            "description": "",
+            "name": "처방"
+          },
+          {
+            "color": "red",
+            "description": "",
+            "name": "주의·금기"
+          },
+          {
+            "color": "gray",
+            "description": "",
+            "name": "기타"
+          }
+        ],
+        "type": "select"
+      },
+      "자료명": {
+        "description": "",
+        "name": "자료명",
+        "type": "title"
+      },
+      "주의 또는 금기": {
+        "description": "",
+        "name": "주의 또는 금기",
+        "type": "text"
+      },
+      "핵심 요약": {
+        "description": "",
+        "name": "핵심 요약",
+        "type": "text"
+      },
+      "환자 설명 가능 여부": {
+        "description": "",
+        "name": "환자 설명 가능 여부",
+        "type": "checkbox"
+      }
+    },
+    "url": "collection://local-knowledge",
+    "views": [
+      {
+        "dataSourceUrl": "{{collection://local-knowledge}}",
+        "displayProperties": [
+          "자료명",
+          "자료 유형",
+          "관련 증상",
+          "관련 변증",
+          "관련 처방",
+          "사용 상태",
+          "관련 진료 세션",
+          "내부 메모",
+          "상세 내용",
+          "주의 또는 금기",
+          "핵심 요약",
+          "환자 설명 가능 여부"
+        ],
+        "name": "전체 테이블",
+        "type": "table"
+      }
+    ]
+  }
+}
